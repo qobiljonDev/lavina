@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Manrope:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600&display=swap");
+@import "helpers";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  list-style: none;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  font-family: "Inter", serif;
+}

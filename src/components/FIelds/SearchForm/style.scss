@@ -1,0 +1,32 @@
+.field-search {
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  min-width: 314px;
+  height: 40px;
+  line-height: 1;
+  overflow: hidden;
+
+  input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 12px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    &::placeholder {
+      color: #817079;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,92 @@
+.custom-table {
+  .MuiTableContainer-root {
+    padding: 0 20px !important;
+  }
+  .css-41abqd-MuiTableContainer-root::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .css-41abqd-MuiTableContainer-root::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+  }
+
+  .css-41abqd-MuiTableContainer-root::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #00b4f574;
+    -webkit-box-shadow: inset 0 0 8px #00b4f5;
+  }
+  .css-k9s8m9-MuiTableContainer-root::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .css-k9s8m9-MuiTableContainer-root::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+  }
+
+  .css-k9s8m9-MuiTableContainer-root::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #00b4f574;
+    -webkit-box-shadow: inset 0 0 8px #00b4f5;
+  }
+
+  table {
+    .css-i4bv87-MuiSvgIcon-root {
+      color: #00b2f5;
+    }
+    thead {
+      tr {
+        th {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: -0.01em;
+          color: #6f767e;
+          padding: 24px 16px;
+          user-select: none;
+          &:first-child {
+            padding-left: 12px !important;
+          }
+
+          .th-name {
+            display: inline-block;
+            transform: translate(2px, 2px);
+            padding: 5px;
+            cursor: pointer;
+
+            &.active {
+              border-radius: 50%;
+              margin-left: 4px;
+              svg {
+                path {
+                  fill: #00b2f5;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          cursor: pointer;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 24px;
+          letter-spacing: -0.01em;
+          color: #1a1d1f;
+          border-color: #efefef;
+
+          &:first-child {
+            padding-left: 12px !important;
+          }
+        }
+      }
+    }
+  }
+}

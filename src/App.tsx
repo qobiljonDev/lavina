@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { RouterProvider } from "react-router-dom";
+import { toast } from "react-toastify";
+import { get } from "lodash";
 
-function App() {
+import { Api, storage } from "services";
+import { PrivateRoute, GuestRoutes } from "./routes";
+import { useAppDispatch, useAppSelector } from "store/hooks";
+import { LoginFailure, LoginSuccess } from "store/action/auth";
+
+const App: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const auth = useAppSelector((state) => state.auth);
+  const user = JSON.parse(storage.get("user") as string);
+
+  const loadFetch = async () => {
+    try {
+      const { data } = await Api({
+        url: "/myself",
+        method: "GET",
+        data: "",
+      });
+      const storageUser = JSON.stringify(get(data, "data", {}));
+      storage.set("user", storageUser);
+
+      dispatch(LoginSuccess({ ...get(data, "data") }));
+    } catch (error) {
+      dispatch(LoginFailure());
+      window.localStorage.removeItem("user");
+      toast.error(get(error, "response.data.message"));
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      loadFetch();
+    }
+    // eslint-disable-next-line
+  }, [user?.key]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper-content">
+      {auth.isAuthenticated ? (
+        <RouterProvider router={PrivateRoute} />
+      ) : (
+        <RouterProvider router={GuestRoutes} />
+      )}
     </div>
   );
-}
+};
 
 export default App;

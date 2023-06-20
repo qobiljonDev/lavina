@@ -1,0 +1,109 @@
+.layout-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  aside {
+    position: relative;
+    min-width: 256px;
+    height: 100vh;
+    background: #3894df;
+    padding: 20px;
+
+    .logo {
+      cursor: pointer;
+
+      a {
+        padding: 30px;
+        display: flex;
+        align-items: flex-end;
+
+        strong {
+          font-size: 38px;
+          margin-left: 10px;
+          color: #234;
+        }
+      }
+    }
+    .menu-link {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+
+      li {
+        height: 50px;
+        .link {
+          height: 100%;
+          display: flex;
+          align-items: center;
+
+          margin-bottom: 10px;
+          padding-left: 20px;
+          background: transparent;
+          border-radius: 10px;
+
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 200%;
+
+          .icon {
+            line-height: 1;
+            svg {
+              width: 30px;
+              height: 30px;
+            }
+          }
+
+          &.active {
+            color: #543;
+            background: #f6f6f6;
+
+            .icon {
+              svg {
+                path {
+                  fill: #543;
+                }
+              }
+            }
+          }
+          .icon {
+            margin-right: 21px;
+          }
+        }
+      }
+    }
+    .logout {
+      position: absolute;
+      bottom: 30px;
+      width: calc(100% - 40px);
+      display: flex;
+      align-items: center;
+
+      height: 50px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+
+      color: red;
+
+      .icon {
+        margin-right: 10px;
+        margin-top: 5px;
+
+        svg {
+          path {
+            fill: red;
+          }
+        }
+      }
+    }
+  }
+
+  .main-page {
+    width: calc(100% - 256px);
+    min-height: 100vh;
+    padding: 40px;
+
+    overflow-y: auto;
+  }
+}
