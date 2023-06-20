@@ -102,6 +102,7 @@ export default function EditBook({
           >
             <TextField
               name="name"
+              defaultValue={get(item, "status", 0)}
               type={isCreate ? "text" : "number"}
               fullWidth={true}
               id="outlined-basic"
